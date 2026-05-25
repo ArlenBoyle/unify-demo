@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures';
-
+// adding comment to test pipeline runs successfully
 test.describe('Navigation', () => {
 
   test.describe('visibility', () => {
