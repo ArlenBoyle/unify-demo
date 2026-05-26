@@ -1,4 +1,5 @@
 import { test, expect } from '../../fixtures';
+
 // adding comment to test pipeline runs successfully
 test.describe('Navigation', () => {
 
@@ -17,7 +18,7 @@ test.describe('Navigation', () => {
     });
   });
 
-  test.describe('navigation', () => {
+  test.describe('href', () => {
     test('nav links point to the correct pages', async ({ homePage }) => {
       await expect(homePage.navAbout).toHaveAttribute('href', /\/about/);
       await expect(homePage.navServices).toHaveAttribute('href', /\/services/);
@@ -26,7 +27,9 @@ test.describe('Navigation', () => {
       await expect(homePage.navCaseStudies).toHaveAttribute('href', /\/case-studies/);
       await expect(homePage.navContact).toHaveAttribute('href', /\/contact/);
     });
+  });
 
+  test.describe('page loads', () => {
     test('clicking Contact us navigates to the Contact page', async ({ homePage, page }) => {
       await homePage.navContact.click();
       await expect(page).toHaveURL(/\/contact/);
